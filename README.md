@@ -1,4 +1,4 @@
-# deeplearning
+# DeepLearning
 
 # GPU로 딥러닝 하는 방법
 
