@@ -11,6 +11,7 @@
 from tensorflow.python.client import device_lib
 print(device_lib.list_local_devices())
 ```
+```
 [name: "/device:CPU:0"
 
 device_type: "CPU"
@@ -44,3 +45,4 @@ incarnation: 8764573227598342969
 physical_device_desc: "device: 0, name: NVIDIA GeForce RTX 3060 Ti, pci bus id: 0000:01:00.0, compute capability: 8.6"
 
 ]
+```
