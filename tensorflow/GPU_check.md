@@ -11,28 +11,6 @@
 from tensorflow.python.client import device_lib
 print(device_lib.list_local_devices())
 ```
-```
-[name: "/device:CPU:0"
-device_type: "CPU"
-memory_limit: 268435456
-locality {
-}
-
-incarnation: 12539132906350912286, name: "/device:GPU:0"
-device_type: "GPU"
-memory_limit: 6938994944
-
-locality {
-  bus_id: 1  
-  links {  
-  }  
-}
-
-incarnation: 8764573227598342969
-physical_device_desc: "device: 0, name: NVIDIA GeForce RTX 3060 Ti, pci bus id: 0000:01:00.0, compute capability: 8.6"
-
-]
-```
 ##### 여러 명이 서버를 사용할 때 탄력적으로 GPU 
 ```
 config = tf.ConfigProto() 
