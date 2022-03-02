@@ -16,3 +16,8 @@ print(device_lib.list_local_devices())
 config = tf.ConfigProto() 
 config.gpu_options.allow_growth = True
 ```
+##### 50% 메모리 할당량 상한 적용
+```
+gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.5) 
+sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+```
