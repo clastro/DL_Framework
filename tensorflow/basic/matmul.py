@@ -13,3 +13,14 @@ billpred = matmul(features,params)
 # Compute and print the error
 error = bill - billpred
 print(error.numpy())
+
+import tensorflow as tf
+# Reshape model from a 1x3 to a 3x1 tensor
+
+model = tf.reshape(model,(3, 1))
+# Multiply letter by model
+output = tf.matmul(letter, model)
+# Sum over output and print prediction using the numpy method
+prediction = tf.reduce_sum(output)
+
+print(prediction.numpy())
