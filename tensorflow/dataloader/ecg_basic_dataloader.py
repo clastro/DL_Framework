@@ -17,7 +17,7 @@ class Dataloader(Sequence):
         batch_x = [*map(self.load_numpy,batch_id)]
         batch_y = [self.y[i] for i in indices]
 
-        return np.squeeze(np.array(batch_x)), tf.keras.utils.to_categorical(batch_y, num_classes=self.n_classes) #,np.array(batch_y)
+        return np.array(batch_x), tf.keras.utils.to_categorical(batch_y, num_classes=self.n_classes) #,np.array(batch_y)
     
     def load_numpy(self,unique_id):
         ecg_wave = np.load('/smc_work/datanvme/smc/origin/' + unique_id + '.npy')[10:4990,:12]
