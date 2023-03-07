@@ -6,3 +6,7 @@ class Function:
     return output
   def forward(self, x):
     raise NotImplementedError()
+
+class Square(Function):
+  def forward(self,x):
+    return x ** 2
