@@ -1,4 +1,4 @@
-def numerial_diff(f, x, eps=1e-4): # 중앙 차분 - 오차가 적다고 알려져 있음, 그러나 계산량 많고 자릿수 누락으로 인한 오차 포함
+def numerial_diff(f, x, eps=1e-4): # 중앙 차분 - 전진 차분보다 오차가 적다고 알려져 있음, 그러나 계산량 많고 자릿수 누락으로 인한 오차 포함
     x0 = Variable(x, data - eps)
     x1 = Variable(x, data + eps)
     y0 = f(x0)
