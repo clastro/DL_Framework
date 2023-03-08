@@ -22,3 +22,35 @@ class Function(self, input):
     self.input = input
     self.output = output
     return output
+
+class Square(Function):
+    def forward(self,x):
+        return x ** 2
+    def backward(self,gy):
+        x = self.input.data
+        gx = 2 * x * gy
+        return gx
+    
+class Exp(Function):
+    def forward(self,x):
+        return np.exp(x)
+    
+    def backward(self,gy):
+        x = self.input.data
+        gx = np.exp(x) * gy
+        return gx    
+    
+A = Square()
+B = exp()
+C = Square()
+
+x = Variable(np.array(0.5))
+a = A(x)
+b = B(a)
+y = C(b)
+
+# back propagation
+
+y.grad = np.array(1.0)
+y.backward()
+print(x.grad)
