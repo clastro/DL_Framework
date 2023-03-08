@@ -28,14 +28,15 @@ class Variable:
             if x.creator is not None:
                 funcs.append(x.creator)
         
-class Function(self, input):
-    x = input.data
-    y = self.forward(x)
-    output = Variable(as_array(y))
-    output.set_creator(self)
-    self.input = input
-    self.output = output
-    return output
+class Function:
+    def __call__(self,input):
+        x = input.data
+        y = self.forward(x)
+        output = Variable(as_array(y))
+        output.set_creator(self)
+        self.input = input
+        self.output = output
+        return output
 
 class Square(Function):
     def forward(self,x):
