@@ -14,3 +14,12 @@ To install Keras with TensorFlow backend:
 ```bash
 pip install tensorflow keras
 
+### TensorFlow
+To install TensorFlow:
+```bash
+pip install tensorflow
+
+### PyTorch
+To install PyTorch, follow the instructions from the official PyTroch website, as installation commands may vary depending on your system configuration:
+```bash
+pip install torch torchvision torchaudio
