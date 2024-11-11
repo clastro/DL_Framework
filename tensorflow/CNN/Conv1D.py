@@ -19,6 +19,5 @@ tf.keras.layers.Conv1D(
     **kwargs
 )
 """
-
 tf.keras.layers.Conv1D(self.sig_dims, kernel_size=self.filt, strides = self.strides,padding='same')
 
