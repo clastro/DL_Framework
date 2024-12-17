@@ -1,0 +1,19 @@
+ """
+ `tf.shape` returns a 1-D integer tensor representing the shape of `input`.
+  For a scalar input, the tensor returned has a shape of (0,) and its value is
+  the empty vector (i.e. []).
+  
+ `tf.shape` and `Tensor.shape` should be identical in eager mode.  Within
+  `tf.function` or within a `compat.v1` context, not all dimensions may be
+  known until execution time. Hence, when defining custom layers and models
+  for graph mode, prefer the dynamic `tf.shape(x)` over the static `x.shape`.
+
+  >>> tf.shape(1.)
+  <tf.Tensor: shape=(0,), dtype=int32, numpy=array([], dtype=int32)>
+
+  >>> t = tf.constant([[[1, 1, 1], [2, 2, 2]], [[3, 3, 3], [4, 4, 4]]])
+  >>> tf.shape(t)
+  <tf.Tensor: shape=(3,), dtype=int32, numpy=array([2, 2, 3], dtype=int32)>
+  
+  """
+
